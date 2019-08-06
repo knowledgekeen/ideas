@@ -7,3 +7,7 @@ body{
 .cursor-pointer{
     cursor: pointer;
 }
+
+.form-control, .btn{
+    border-radius: 0;
+}
