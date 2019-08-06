@@ -16,7 +16,8 @@ import { NavbarComponent } from './navbar/navbar.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
