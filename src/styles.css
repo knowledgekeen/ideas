@@ -9,6 +9,7 @@ body{
     cursor: pointer;
 }
 
-.form-control, .btn{
-    border-radius: 0;
+.form-control, .btn, .list-group-item{
+    border-radius: 0 !important;
+    resize: none !important;
 }

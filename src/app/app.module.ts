@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
@@ -11,22 +12,27 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthService } from './Services/auth.service';
 import { NavbarComponent } from './navbar/navbar.component';
+import { NewideaComponent } from './newidea/newidea.component';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { EncdecService } from './encdec.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    NavbarComponent
+    NavbarComponent,
+    NewideaComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, AngularFirestore, EncdecService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

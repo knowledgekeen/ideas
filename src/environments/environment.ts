@@ -5,13 +5,13 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyCLlratNKKnBh4LDVTSe-kHA9gXn8CNeZA",
-    authDomain: "innovative-suggestions.firebaseapp.com",
-    databaseURL: "https://innovative-suggestions.firebaseio.com",
-    projectId: "innovative-suggestions",
-    storageBucket: "innovative-suggestions.appspot.com",
-    messagingSenderId: "961715819407",
-    appId: "1:961715819407:web:ba2ef0f9793a5ab6"
+    apiKey: "AIzaSyCpRc_dciwMHI1mC45z6dFkaAqBdvGxkRA",
+    authDomain: "ideas-1.firebaseapp.com",
+    databaseURL: "https://ideas-1.firebaseio.com",
+    projectId: "ideas-1",
+    storageBucket: "ideas-1.appspot.com",
+    messagingSenderId: "725328478371",
+    appId: "1:725328478371:web:e151f6471f679390"
   }
 };
 
