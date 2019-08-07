@@ -1,0 +1,5 @@
+.ideacardswrapper .card-body{
+    max-height: 120px;
+    overflow: hidden;
+    min-height: 120px;
+}

@@ -1,8 +1,38 @@
 <app-navbar></app-navbar>
 
-<div class="container my-4">
-  <div class="card p-3">
-    <h5 class="text-primary text-uppercase">Dashboard</h5>
-    <hr class="m-0 bg-warning">
+<div class="container-fluid my-4">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="text-primary text-uppercase">
+        Dashboard - <span *ngIf="privateview">Private</span><span *ngIf="!privateview">Public</span> View
+        <a href="javascript:void(0);" class="h6 float-right" (click)="changeView()">
+          Click Here for <span *ngIf="privateview">Public</span> <span *ngIf="!privateview">Private</span> view
+        </a>
+      </h5>
+      <hr class="mt-3 mb-5 mx-0 bg-warning">
+
+      <h5 class="my-3 text-primary" *ngIf="!allideas"><i class="fas fa-circle-notch fa-spin"></i> Please wait...</h5>
+
+      <div class="alert alert-danger" role="alert" *ngIf="errormsg">
+        <i class="fas fa-exclamation-triangle"></i> {{errormsg}}
+      </div>
+
+      <div class="row ideacardswrapper">
+        <div class="col-md-4 col-sm-12 mb-5" *ngFor="let idea of allideas; let i = index;"
+          [ngClass]="{'text-dark': idea.layout == 'bg-default','text-white': idea.layout != 'bg-default'}">
+          <div [className]="'card '+idea.layout">
+            <div class="card-header">{{idea.title}}</div>
+            <div class="card-body">
+              <div [innerHTML]="idea.desc"></div>
+            </div>
+            <div class="card-footer">
+              <h6 class="text-right">
+                <a href="javascript:void(0)" class=" text-white">...More</a>
+              </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

@@ -23,7 +23,7 @@ export class NewideaComponent implements OnInit {
   selectedfeature: any = null;
   alertpop: any = { success: false, msg: null };
 
-  constructor(private _route: ActivatedRoute, private _db: AngularFirestore, private _authService: AuthService) {
+  constructor(private _route: ActivatedRoute, private _db: AngularFirestore, private _authservice: AuthService) {
     this._route.params.subscribe(Route => {
       this.ideaid = parseInt(Route.ideaid);
 
@@ -34,10 +34,10 @@ export class NewideaComponent implements OnInit {
   }
 
   ngOnInit() {
-    this._authService.getIsUserLoggedIn().then(Resp => {
+    this._authservice.getIsUserLoggedIn().then(Resp => {
       if (Resp)
         this.userdets = Resp
-    })
+    });
   }
 
   addFeature() {
