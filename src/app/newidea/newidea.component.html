@@ -55,7 +55,7 @@
           <input type="text" class="form-control" placeholder="Idea Title" [(ngModel)]="title" />
         </div>
         <div class="col-md-4 col-sm-12 mb-3">
-          <button class="btn btn-info mt-4">Upload Image</button>
+          <button class="btn btn-info mt-4" data-toggle="modal" data-target="#uploadImage">Upload Image</button>
         </div>
       </div>
 
@@ -198,6 +198,32 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- Upload Image Modal -->
+<div class="modal fade" id="uploadImage">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h4 class="modal-title">Modal Heading</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+          <input type="file" id="file" accept="image/png, image/jpeg, image/jpg"/>
+          <label for="file" class="btn-2"  [(ngModel)]="Image">Select image</label>
+          <span> 
+            <button type="button" class="btn btn-sm btn-success" (click)="saveImage()">Upload</button>
+          </span>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm  btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
     </div>
   </div>
 </div>

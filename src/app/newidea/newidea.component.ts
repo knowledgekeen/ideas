@@ -22,6 +22,8 @@ export class NewideaComponent implements OnInit {
   allcomments: any = null;
   selectedfeature: any = null;
   alertpop: any = { success: false, msg: null };
+  allImages: any = [];
+  Image: any = [];
 
   constructor(private _route: ActivatedRoute, private _db: AngularFirestore, private _authservice: AuthService) {
     this._route.params.subscribe(Route => {
@@ -134,5 +136,9 @@ export class NewideaComponent implements OnInit {
 
   selectLayout(layoutstyle) {
     this.layout = layoutstyle;
+  }
+
+  saveImage(){
+    console.log(this.Image);
   }
 }
